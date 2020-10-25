@@ -1,0 +1,114 @@
+
+.p-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.p-header input, .p-header select {
+    display: inline-block;
+    width: 100px;
+}
+
+.p-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: solid 1px #e7eaec;
+    border-left: solid 1px #e7eaec;
+    border-radius: 4px;
+    background: #fff;
+
+}
+
+.p-calendar th {
+    padding: 10px;
+    text-align: center;
+    border-right: solid 1px #e7eaec;
+    vertical-align: middle;
+    background: #fafafa;
+}
+
+
+.p-calendar tr {
+    border-bottom: solid 1px #e7eaec;
+}
+
+.p-calendar td {
+    padding: 10px;
+    border-right: solid 1px #e7eaec;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+}
+.p-calendar td .p-checkbox{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    margin: 0;
+}
+.p-calendar td:first-child {
+    background: #fafafa;
+}
+.p-calendar td.selected {
+    background: #e6f7ff;
+}
+
+.p-calendar td.current {
+    outline: solid 2px #1ab394;
+    z-index: 9;
+
+}
+
+.p-calendar .p-date {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #f5f5f5;
+    text-align: center;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+
+.p-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.p-checkbox span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.p-checkbox input {
+    position: absolute;
+    left: -9999px;
+}
+
+.p-checkbox input:checked + .checkbox-icon {
+    border-color: #1ab394;
+    background: #1ab394;
+}
+
+.p-checkbox .checkbox-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: solid 1px #e7eaec;
+    margin-right: 5px;
+    font-size: 0;
+    border-radius: 2px;
+}
+
+.p-checkbox input:checked + .checkbox-icon::after {
+    content: '';
+    width: 6px;
+    height: 12px;
+    border-right: solid 2px #fff;
+    border-bottom: solid 2px #fff;
+    display: inline-block;
+    transform: translateY(-2px) rotate(45deg);
+}

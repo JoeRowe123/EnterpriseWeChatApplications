@@ -1,0 +1,41 @@
+.vue-time-picker{
+    display: inline-block;
+    position: relative;
+}
+.vue-time-picker-dropdown{
+    position: absolute;
+    bottom: 100%;
+    background: #fff;
+    left: 0;
+    border: solid 1px #e7eaec;
+
+    white-space: nowrap;
+
+}
+.vue-time-picker-dropdown ul{
+    width: 50px;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 150px;
+
+    overflow: auto;
+}
+.vue-time-picker-dropdown ul li{
+    padding: 5px 10px;
+    user-select: none;
+}
+
+.vue-time-picker-dropdown ul li:hover{
+    background: #e7eaec;
+}
+.vue-time-picker-dropdown ul li.active{
+    background: #1ab394;
+    color: #fff;
+}
+
+
+.vue-time-picker-dropdown ul:not(:last-child){
+
+}

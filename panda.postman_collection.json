@@ -1,0 +1,1957 @@
+{
+	"info": {
+		"_postman_id": "03b7dcee-3683-4d60-ba9e-78985103d180",
+		"name": "panda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "web",
+			"item": [
+				{
+					"name": "web获取船期表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"travelLineId\" : 1,\n\t\"date\" :\"2019-06\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/web/index/goods-travel-line-and-date",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"web",
+								"index",
+								"goods-travel-line-and-date"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "通过城市获取商品列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/web/index/list-by-city?cityId=1&limit=20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"web",
+								"index",
+								"list-by-city"
+							],
+							"query": [
+								{
+									"key": "cityId",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户认证相关",
+			"item": [
+				{
+					"name": "用户获取登录验证码",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\" : \"13668291071\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/login/code",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"code"
+							]
+						},
+						"description": "建议前端同一个手机号码30s发送一次"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\" : \"13668291071\"\n}"
+								},
+								"url": {
+									"raw": "http://frontend.panda.com/login/code",
+									"protocol": "http",
+									"host": [
+										"frontend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"login",
+										"code"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 03:02:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d16d4c5d92b7"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "31"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d16d4c5d92b7"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"extra\": null,\n    \"data\": 2069\n}"
+						},
+						{
+							"name": "缺少参数",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}"
+								},
+								"url": {
+									"raw": "http://frontend.panda.com/login/code",
+									"protocol": "http",
+									"host": [
+										"frontend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"login",
+										"code"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 03:02:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d16d4dd765e3"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "17"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d16d4dd765e3"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"缺少参数phone\",\n    \"extra\": null,\n    \"data\": null\n}"
+						},
+						{
+							"name": "用户被禁止登陆",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\" : \"13668291071\"\n}"
+								},
+								"url": {
+									"raw": "http://frontend.panda.com/login/code",
+									"protocol": "http",
+									"host": [
+										"frontend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"login",
+										"code"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 03:03:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d16d4fabfaa9"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "33"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d16d4fabfaa9"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"message\": \"禁止登陆\",\n    \"extra\": null,\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "用户登录",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\" : \"13668291071\",\n\t\"code\" : \"3975\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/login/index",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"index"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "验证码错误",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\" : \"13668291071\",\n\t\"code\" : \"1070\"\n}"
+								},
+								"url": {
+									"raw": "http://frontend.panda.com/login/index",
+									"protocol": "http",
+									"host": [
+										"frontend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"login",
+										"index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 03:04:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d16d528d1697"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "21"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d16d528d1697"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"登录失败,验证码错误\",\n    \"extra\": null,\n    \"data\": null\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\" : \"13668291071\",\n\t\"code\" : \"3975\"\n}"
+								},
+								"url": {
+									"raw": "http://frontend.panda.com/login/index",
+									"protocol": "http",
+									"host": [
+										"frontend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"login",
+										"index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 03:04:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d16d546d6904"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "20"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d16d546d6904"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_csrf-frontend=502e6bf7ba7f2c4362cfd64595c219b1ee10f0cbc618bd108e6a7772cd3c1032a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PZfZgHCG2vpVc7R96TvqHMJw3HlxzqET%22%3B%7D; path=/; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"extra\": null,\n    \"data\": {\n        \"uid\": 2,\n        \"token\": \"f47pphhq01nbn0rasvm4n9jl6c1\",\n        \"phone\": \"13668291071\"\n    }\n}"
+						},
+						{
+							"name": "验证码过期",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\" : \"13668291071\",\n\t\"code\" : \"3975\"\n}"
+								},
+								"url": {
+									"raw": "http://frontend.panda.com/login/index",
+									"protocol": "http",
+									"host": [
+										"frontend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"login",
+										"index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 03:05:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d16d564411f2"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "25"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d16d564411f2"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"登录失败,验证码已失效\",\n    \"extra\": null,\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "后台",
+			"item": [
+				{
+					"name": "创建sku",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"goodsId\":3,\n\t\"name\":\"具体房型\"\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-sku/create",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-sku",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "同一个商品sku重复名称\b",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"goodsId\":3,\n\t\"name\":\"具体房型\"\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku/create",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 14:53:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d177b50030fc"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "43"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d177b50030fc"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": -1,\n    \"message\": \"The combination \\\"3\\\"-\\\"具体房型\\\" of Goods ID and 名称 has already been taken.The combination \\\"3\\\"-\\\"具体房型\\\" of Goods ID and 名称 has already been taken.\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"goodsId\":3,\n\t\"name\":\"具体房型\"\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku/create",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 14:54:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d177b881759e"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "68"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d177b881759e"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": {\n        \"goods_id\": 3,\n        \"name\": \"具体房型\",\n        \"id\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "创建sku\b_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"goodsSkuId\":4,\n\t\"name\":\"2人\"\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-sku-item/create",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-sku-item",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"goodsSkuId\":4,\n\t\"name\":\"2人\"\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku-item/create",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku-item",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 14:54:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d177bacec0a3"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "44"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d177bacec0a3"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": {\n        \"goods_sku_id\": 4,\n        \"name\": \"2人\",\n        \"id\": 3\n    }\n}"
+						},
+						{
+							"name": "同一个sku创建name一样的会\b",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"goodsSkuId\":4,\n\t\"name\":\"2人\"\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku-item/create",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku-item",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jun 2019 00:36:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d1803efe7140"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "225"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d1803efe7140"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": -1,\n    \"message\": \"The combination \\\"4\\\"-\\\"2人\\\" of Goods Sku ID and Name has already been taken.The combination \\\"4\\\"-\\\"2人\\\" of Goods Sku ID and Name has already been taken.\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "更新sku",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\":\"具体房型1\"\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-sku/update",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-sku",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\":1,\n\t\"name\":\"具体房型1\"\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku/update",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 14:43:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d1779242e467"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "53"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d1779242e467"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"具体房型1\",\n        \"goods_id\": 3,\n        \"created_at\": \"2019-06-29 22:42:45\",\n        \"updated_at\": \"2019-06-29 22:42:45\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "删除sku",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 1\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-sku/delete",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-sku",
+								"delete"
+							]
+						},
+						"description": "如果删除了sku,那么当前sku下面全部的item参与的组合设置的价格都会被删除,\n删除后,前端重新加载一下数据就能获取最新价格信息"
+					},
+					"response": [
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\" : 1\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku/delete",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jun 2019 14:44:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d1779602fb8c"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "80"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d1779602fb8c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "更新sku_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":3,\n\t\"name\":\"31\"\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-sku-item/update",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-sku-item",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\":3,\n\t\"name\":\"31\"\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku-item/update",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku-item",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jun 2019 00:37:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d18046591d25"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "21"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d18046591d25"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": {\n        \"id\": 3,\n        \"goods_sku_id\": 4,\n        \"name\": \"31\",\n        \"created_at\": \"2019-06-29 22:55:08\",\n        \"update_at\": \"2019-06-30 08:37:22\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "删除sku_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":12\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-sku-item/delete",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-sku-item",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\":5\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-sku-item/delete",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-sku-item",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jun 2019 00:39:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d1804a8d03be"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "90"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d1804a8d03be"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "保存价格对象",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"goodsId\":3,\n\t\"price\":{\n\t\t\"price\":112,\n\t\t\"children_price\":33,\n\t\t\"house_price\":22,\n\t\t\"date\":\"2019-06-06\",\n\t\t\"stock\":11,\n\t\t\"stock_children\":33,\n\t\t\"sku\":[6, 7]\n\t}\n}"
+						},
+						"url": {
+							"raw": "backend.panda.com/goods-price/save",
+							"host": [
+								"backend",
+								"panda",
+								"com"
+							],
+							"path": [
+								"goods-price",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"goodsId\":3,\n\t\"price\":{\n\t\t\"price\":112,\n\t\t\"children_price\":33,\n\t\t\"house_price\":22,\n\t\t\"date\":\"2019-06-06\",\n\t\t\"stock\":11,\n\t\t\"stock_children\":33,\n\t\t\"sku\":[6, 7]\n\t}\n}"
+								},
+								"url": {
+									"raw": "backend.panda.com/goods-price/save",
+									"host": [
+										"backend",
+										"panda",
+										"com"
+									],
+									"path": [
+										"goods-price",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.15.10"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jun 2019 01:59:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.27"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d18178286f28"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "53"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d18178286f28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"data\": {\n        \"goods_id\": 3,\n        \"price\": 112,\n        \"children_price\": 33,\n        \"house_price\": 22,\n        \"date\": \"2019-06-06\",\n        \"stock\": 11,\n        \"stock_children\": 33,\n        \"sku\": [\n            6,\n            7\n        ],\n        \"id\": 37\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "h5",
+			"item": [
+				{
+					"name": "h5获取船期表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"travelLineId\" : 1,\n\t\"date\" :\"2019-06-06\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/h5/index/goods-travel-line-and-date",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"h5",
+								"index",
+								"goods-travel-line-and-date"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "商品列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/goods/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"goods",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取推荐的商品",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"recommendName\":\"爆款推荐\",\n\t\"limit\" : 1\n}"
+				},
+				"url": {
+					"raw": "{{url}}/goods/recommends",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"goods",
+						"recommends"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sucess",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"recommendName\":\"爆款推荐\",\n\t\"limit\" : 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/goods/recommends",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"goods",
+								"recommends"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.15.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jun 2019 07:55:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.1.27"
+						},
+						{
+							"key": "X-Debug-Tag",
+							"value": "5d171976756cc"
+						},
+						{
+							"key": "X-Debug-Duration",
+							"value": "47"
+						},
+						{
+							"key": "X-Debug-Link",
+							"value": "/debug/default/view?tag=5d171976756cc"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"message\": \"ok\",\n    \"extra\": null,\n    \"data\": [\n        {\n            \"title\": \"11\",\n            \"image\": \"http://images.panda.com/upload/20190629/Snip20190611_7(1).png\",\n            \"images\": [\n                \"http://images.panda.com/upload/20190619/Snip20190612_3(4).png\",\n                \"http://images.panda.com/upload/20190619/Snip20190612_2(4).png\",\n                \"http://images.panda.com/upload/20190619/Snip20190615_1.png\"\n            ],\n            \"desc\": \"\",\n            \"sku\": {\n                \"ff\": [\n                    \"红色\",\n                    \"黑色\"\n                ],\n                \"大小\": [\n                    \"大\"\n                ]\n            },\n            \"travelLineName\": \"重庆-成都1\",\n            \"minxPrice\": 20,\n            \"dateRange\": \"06.04~06.05\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "轮播图",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/banner/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"banner",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "游轮品牌",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/brand/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"brand",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "城市列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/city/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"city",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "航线列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/travel-line/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"travel-line",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商品详情",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/goods/index?id=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"goods",
+						"index"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商品添加评论",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "an8610ob2beo07in5k6noigqpf",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\":\"好好好\",\n\t\"commentValue\":\"5.0\",\n\t\"goodsId\":3,\n\t\"images\":[]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/comment/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comment",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取商品评论",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/goods/comment-page?goodsId=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"goods",
+						"comment-page"
+					],
+					"query": [
+						{
+							"key": "goodsId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "品牌详情查看",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/brand/view?id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"brand",
+						"view"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "feb8f035-d735-4b82-88a3-cb8efe32fabc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8da0d110-e59e-47e8-a1da-f622c85744c5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "7e05271b-0705-4a10-807f-d918a65327de",
+			"key": "url",
+			"value": "123",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
